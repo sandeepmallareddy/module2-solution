@@ -21,9 +21,11 @@
 
     //Creating a singleton service - which will take care of Business Logic
     app.service('ShoppingCart',ShoppingCartService);
-    
+
+    //Injecting the Service to the Controllers
     ToBuyShoppingController.$inject = ['ShoppingCart'];
     AlreadyBoughtController.$inject = ['ShoppingCart'];
+
     //Function for ToBuyShopping Controller
     function ToBuyShoppingController(ShoppingCart){
 	var toBuy = this;
@@ -54,7 +56,10 @@
     }
 
 
-    //Shopping cart Service to Take Care of the Business Logic
+    /*
+      Shopping cart Service to Take Care of the Business Logic
+    */
+    
     function ShoppingCartService(){
 	var ShoppingCart = this;
 
